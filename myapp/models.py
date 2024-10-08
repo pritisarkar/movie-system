@@ -13,3 +13,18 @@ class MyModel(models.Model):
 
     def __str__(self):
         return self.name
+
+class User(models.Model):
+    useremail = models.CharField(max_length = 50)
+    password = models.CharField()
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
+
+
+
