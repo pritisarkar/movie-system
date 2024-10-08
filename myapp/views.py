@@ -7,12 +7,14 @@ import bcrypt
 
 @csrf_exempt
 def user(request):
+    print("hey user")
     try:
         if request.method == 'POST':
             data = json.loads(request.body)
             useremail = data['useremail']
             password = data['password'].encode('utf-8')
-            user.save()
+            print(useremail,password)
+            # user.save()
             return JsonResponse({"msg":"data inserted","status":"success"})
         else:
             return "hello"
