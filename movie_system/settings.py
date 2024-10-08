@@ -63,8 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'myapp',
-            ],
+            ]
         },
     },
 ]
@@ -77,15 +76,13 @@ WSGI_APPLICATION = 'movie_system.wsgi.application'
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django-movie-system',
         'USER' : 'postgres',
         'PASSWORD' : 'root',
         'HOST' : 'localhost',
         'PORT' : '5432'
-    }
-
-    
+    }   
 }
 
 
