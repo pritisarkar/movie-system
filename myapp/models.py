@@ -20,6 +20,15 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
+class Genra(models.Model):
+    name = models.CharField(max_length = 100)
+    description = models.CharField(max_length = 500)
+
+class Movie(models.Model):
+    movie_name = models.CharField(max_length = 50)
+    descrption = models.CharField(max_length=500)
+    image = models.URLField()
+    genre = models.CharField(max_length = 100)
 
 
 
