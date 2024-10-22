@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import User
+from .models import User, Genre
 import json
 from django.views.decorators.csrf import csrf_exempt
 import bcrypt
@@ -26,13 +26,14 @@ def user(request):
 
 @csrf_exempt
 def genre(request):
-    print("hey user")
+    print("genre work")
     try:
         if request.method == 'POST':
             data = json.loads(request.body)
             name = data['name']
             description = data['description']
-            genra = genre(name=name, description = description)
+            genre = Genre(name=name, description = description)
+            print('hello')
             genre.save()
             return JsonResponse({"msg":"data inserted","status":"success"})
         else:
@@ -41,3 +42,6 @@ def genre(request):
         import traceback
         traceback.print_exc()
         return JsonResponse({"status":"error","message":str(e)})
+
+# @csrf_exempt
+# def movie(request):
